@@ -282,7 +282,7 @@ export default function Services() {
                 Schedule a Consultation
               </button>
             </Link>
-            <Link href="/search">
+            <a href="https://search.transitionmusic.com/" target="_blank" rel="noopener noreferrer">
               <button
                 className="px-8 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:bg-white hover:text-black"
                 style={{
@@ -295,7 +295,7 @@ export default function Services() {
               >
                 Search Our Library
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

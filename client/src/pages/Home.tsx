@@ -218,7 +218,7 @@ export default function Home() {
               className="flex flex-wrap gap-4"
               style={{ animation: "fadeUp 0.7s 0.3s ease both" }}
             >
-              <Link href="/search">
+              <a href="https://search.transitionmusic.com/" target="_blank" rel="noopener noreferrer">
                 <button
                   className="px-8 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:scale-105"
                   style={{
@@ -230,7 +230,7 @@ export default function Home() {
                 >
                   Search Our Library
                 </button>
-              </Link>
+              </a>
               <Link href="/services">
                 <button
                   className="px-8 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:bg-white hover:text-black"

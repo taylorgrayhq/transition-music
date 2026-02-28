@@ -46,17 +46,29 @@ export default function Footer() {
                 { label: "About Us", href: "/about" },
                 { label: "Services", href: "/services" },
                 { label: "Submit Music", href: "/submit" },
-                { label: "Search Music", href: "/search" },
+                { label: "Search Music", href: "https://search.transitionmusic.com/", external: true },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
-                    style={{ fontFamily: "'Barlow', sans-serif" }}
-                  >
-                    {link.label}
-                  </Link>
+                  {(link as any).external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white text-sm transition-colors"
+                      style={{ fontFamily: "'Barlow', sans-serif" }}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white text-sm transition-colors"
+                      style={{ fontFamily: "'Barlow', sans-serif" }}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

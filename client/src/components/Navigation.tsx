@@ -14,7 +14,7 @@ const navLinks = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Submit Music", href: "/submit" },
-  { label: "Search Music", href: "/search" },
+  { label: "Search Music", href: "https://search.transitionmusic.com/", external: true },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -57,24 +57,41 @@ export default function Navigation() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`nav-link text-sm font-medium tracking-wide uppercase transition-colors duration-200 ${
-                  location === link.href
-                    ? "tmc-orange"
-                    : "text-gray-300 hover:text-white"
-                }`}
-                style={{
-                  fontFamily: "'Barlow', sans-serif",
-                  letterSpacing: "0.08em",
-                  fontSize: "0.8rem",
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nav-link text-sm font-medium tracking-wide uppercase transition-colors duration-200 text-gray-300 hover:text-white"
+                  style={{
+                    fontFamily: "'Barlow', sans-serif",
+                    letterSpacing: "0.08em",
+                    fontSize: "0.8rem",
+                  }}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`nav-link text-sm font-medium tracking-wide uppercase transition-colors duration-200 ${
+                    location === link.href
+                      ? "tmc-orange"
+                      : "text-gray-300 hover:text-white"
+                  }`}
+                  style={{
+                    fontFamily: "'Barlow', sans-serif",
+                    letterSpacing: "0.08em",
+                    fontSize: "0.8rem",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile Hamburger */}
@@ -113,18 +130,31 @@ export default function Navigation() {
         }}
       >
         <div className="container py-4 flex flex-col gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`py-3 px-2 text-sm font-medium uppercase tracking-widest border-b border-gray-800 last:border-0 transition-colors ${
-                location === link.href ? "tmc-orange" : "text-gray-300"
-              }`}
-              style={{ fontFamily: "'Barlow', sans-serif" }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-3 px-2 text-sm font-medium uppercase tracking-widest border-b border-gray-800 last:border-0 transition-colors text-gray-300"
+                style={{ fontFamily: "'Barlow', sans-serif" }}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`py-3 px-2 text-sm font-medium uppercase tracking-widest border-b border-gray-800 last:border-0 transition-colors ${
+                  location === link.href ? "tmc-orange" : "text-gray-300"
+                }`}
+                style={{ fontFamily: "'Barlow', sans-serif" }}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </div>
       </div>
     </nav>
