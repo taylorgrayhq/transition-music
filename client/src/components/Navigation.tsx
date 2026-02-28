@@ -7,7 +7,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
-const TMC_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-logo_0354dfae.png";
+const TMC_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-logo-white_29c8051b.png";
 
 const navLinks = [
   { label: "Home", href: "/" },

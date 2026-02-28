@@ -1,6 +1,6 @@
 /*
  * Search Music Page — Transition Music Corporation
- * Design: Dark editorial with Soundmouse integration info and library overview
+ * Design: Dark editorial with SourceAudio integration info and library overview
  */
 
 import Navigation from "@/components/Navigation";
@@ -104,13 +104,13 @@ export default function SearchMusic() {
                 150,000+ TRACKS.<br />ONE SEARCH.
               </h2>
               <p className="text-gray-300 leading-relaxed mb-5" style={{ fontFamily: "'Barlow', sans-serif" }}>
-                Our music library is powered by Soundmouse — a professional music search platform trusted by broadcasters, production companies, and music supervisors worldwide. Search by genre, mood, tempo, instrumentation, or keyword to find exactly what your project needs.
+                Our music library is powered by SourceAudio — a professional music search platform trusted by broadcasters, production companies, and music supervisors worldwide. Search by genre, mood, tempo, instrumentation, or keyword to find exactly what your project needs.
               </p>
               <p className="text-gray-400 leading-relaxed mb-8" style={{ fontFamily: "'Barlow', sans-serif" }}>
                 Every track in our catalog is pre-cleared and available for immediate licensing. No rights conflicts, no delays — just great music, ready when you are.
               </p>
               <a
-                href="https://www.soundmouse.com"
+                href="https://www.sourceaudio.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:scale-105"
@@ -128,7 +128,7 @@ export default function SearchMusic() {
                 className="text-gray-600 text-xs mt-3"
                 style={{ fontFamily: "'Barlow', sans-serif" }}
               >
-                Powered by Soundmouse. Opens in a new window.
+                Powered by SourceAudio. Opens in a new window.
               </p>
             </div>
 
@@ -156,7 +156,7 @@ export default function SearchMusic() {
                       className="text-white font-semibold text-sm"
                       style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}
                     >
-                      Soundmouse Search Portal
+                      SourceAudio Search Portal
                     </p>
                     <p
                       className="text-gray-500 text-xs"
@@ -299,7 +299,7 @@ export default function SearchMusic() {
                 Contact Licensing
               </a>
               <a
-                href="https://www.soundmouse.com"
+                href="https://www.sourceaudio.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:bg-white hover:text-black"

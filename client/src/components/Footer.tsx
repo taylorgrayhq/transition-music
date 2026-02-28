@@ -5,7 +5,7 @@
 
 import { Link } from "wouter";
 
-const TMC_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-logo_0354dfae.png";
+const TMC_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-logo-white_29c8051b.png";
 
 export default function Footer() {
   return (
@@ -124,13 +124,13 @@ export default function Footer() {
                 Music Search
               </h4>
               <a
-                href="https://www.soundmouse.com"
+                href="https://www.sourceaudio.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white text-xs transition-colors"
                 style={{ fontFamily: "'Barlow', sans-serif" }}
               >
-                Powered by Soundmouse →
+                Powered by SourceAudio →
               </a>
             </div>
           </div>
