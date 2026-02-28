@@ -11,7 +11,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-hero-bg-ADc8iwxotSQGwixb4Qbsb8.webp";
-const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-about-bg-fscjPNDwFiTHPKpak4QMAT.webp";
+const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-hero-alt1-GpXjogwezerkqhbdgBTStd.webp";
 const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-services-bg-TUb43GcAyETB2SVCPheXGw.webp";
 const HUB_DIAGRAM = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-hub-diagram_6aad3df9.png";
 
