@@ -210,7 +210,7 @@ export default function Home() {
                 animation: "fadeUp 0.7s 0.2s ease both",
               }}
             >
-              For over 25 years, Transition Music Corporation has been the trusted music infrastructure behind the world's leading media brands — delivering end-to-end licensing, supervision, publishing, and custom composition at scale.
+              For over 25 years, Transition Music has been the trusted music infrastructure behind the world's leading media brands — delivering end-to-end licensing, supervision, publishing, and custom composition at scale.
             </p>
 
             {/* CTAs */}
@@ -338,7 +338,7 @@ export default function Home() {
                 THE TEAM<br />BEHIND THE MUSIC.
               </h2>
               <p className="text-gray-300 leading-relaxed mb-5" style={{ fontFamily: "'Barlow', sans-serif" }}>
-                Transition Music Corporation is a full-service music company built for the modern media landscape. We create, license, manage, and monetize music for television networks, streaming platforms, production companies, and global brands.
+                TMC is a full-service music company built for the modern media landscape. We create, license, manage, and monetize music for television networks, streaming platforms, production companies, and global brands.
               </p>
               <p className="text-gray-400 leading-relaxed mb-8" style={{ fontFamily: "'Barlow', sans-serif" }}>
                 Led by Grammy and Emmy award-winning professionals, our team brings decades of hands-on experience to every engagement. Whether you need a single track cleared or a complete outsourced music department, we deliver with precision and care.

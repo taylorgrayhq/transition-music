@@ -5,7 +5,7 @@
 
 import { Link } from "wouter";
 
-const TMC_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-logo-white_29c8051b.png";
+const TMC_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-logo-white-v4_4cd96a55.png";
 
 export default function Footer() {
   return (
