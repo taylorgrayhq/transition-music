@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 
 const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-services-bg-TUb43GcAyETB2SVCPheXGw.webp";
 
@@ -40,15 +41,15 @@ const guidelines = [
 export default function SubmitMusic() {
   const [formData, setFormData] = useState({
     artistName: "",
-    contactName: "",
     email: "",
     phone: "",
     genre: "",
-    musicLink: "",
+    spotifyUrl: "",
     message: "",
     agree: false,
   });
   const [submitting, setSubmitting] = useState(false);
+  const submitMutation = trpc.forms.submitMusic.useMutation();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -58,29 +59,41 @@ export default function SubmitMusic() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.agree) {
       toast.error("Please confirm that you have read and agree to the submission guidelines.");
       return;
     }
     setSubmitting(true);
-    // Simulate submission
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      await submitMutation.mutateAsync({
+        artistName: formData.artistName,
+        email: formData.email,
+        phone: formData.phone,
+        genre: formData.genre,
+        spotifyUrl: formData.spotifyUrl,
+        message: formData.message,
+      });
       toast.success("Thank you for your submission! We'll review your music and be in touch if it's a fit for our catalog.");
       setFormData({
         artistName: "",
-        contactName: "",
         email: "",
         phone: "",
         genre: "",
-        musicLink: "",
+        spotifyUrl: "",
         message: "",
         agree: false,
       });
-    }, 1500);
+    } catch (error) {
+      toast.error("Failed to submit. Please try again.");
+      console.error(error);
+    } finally {
+      setSubmitting(false);
+    }
   };
+
+  const isLoading = submitMutation.isPending;
 
   const inputStyle: React.CSSProperties = {
     backgroundColor: "rgba(255,255,255,0.05)",
@@ -258,8 +271,8 @@ export default function SubmitMusic() {
                     </label>
                     <input
                       type="text"
-                      name="contactName"
-                      value={formData.contactName}
+                      name="artistName"
+                      value={formData.artistName}
                       onChange={handleChange}
                       required
                       style={inputStyle}
@@ -323,12 +336,12 @@ export default function SubmitMusic() {
 
                 <div>
                   <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
-                    Link to Music (SoundCloud, Dropbox, Google Drive, etc.) *
+                    Link to Music (Spotify, SoundCloud, Dropbox, Google Drive, etc.) *
                   </label>
                   <input
                     type="url"
-                    name="musicLink"
-                    value={formData.musicLink}
+                    name="spotifyUrl"
+                    value={formData.spotifyUrl}
                     onChange={handleChange}
                     required
                     placeholder="https://"

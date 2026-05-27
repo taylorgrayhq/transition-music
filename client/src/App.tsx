@@ -10,8 +10,8 @@ import Services from "./pages/Services";
 import SubmitMusic from "./pages/SubmitMusic";
 import SearchMusic from "./pages/SearchMusic";
 import Contact from "./pages/Contact";
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path="/" component={Home} />

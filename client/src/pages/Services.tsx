@@ -6,6 +6,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
+import EmailSignup from "@/components/EmailSignup";
 
 const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-services-bg-TUb43GcAyETB2SVCPheXGw.webp";
 const HUB_DIAGRAM = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-hub-diagram_6aad3df9.png";
@@ -297,6 +298,35 @@ export default function Services() {
               </button>
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* EMAIL SIGNUP */}
+      <section
+        className="py-12"
+        style={{
+          background: "rgba(247,148,29,0.04)",
+          borderTop: "1px solid rgba(247,148,29,0.1)",
+        }}
+      >
+        <div className="container max-w-2xl text-center">
+          <p
+            className="uppercase tracking-widest text-xs mb-2"
+            style={{ fontFamily: "'Barlow', sans-serif", color: "oklch(0.72 0.18 52)" }}
+          >
+            Stay Updated
+          </p>
+          <h3
+            className="text-white font-black leading-none mb-3"
+            style={{
+              fontFamily: "'Barlow Condensed', sans-serif",
+              fontSize: "1.5rem",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Get Music News & Opportunities
+          </h3>
+          <EmailSignup />
         </div>
       </section>
 

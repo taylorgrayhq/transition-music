@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 
 const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-services-bg-TUb43GcAyETB2SVCPheXGw.webp";
 
@@ -54,15 +55,24 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const submitMutation = trpc.forms.submitContact.useMutation();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      await submitMutation.mutateAsync(formData);
       toast.success("Thank you for reaching out! A member of our team will be in touch shortly.");
       setFormData({ name: "", company: "", email: "", phone: "", subject: "", message: "" });
-    }, 1500);
+    } catch (error) {
+      toast.error("Failed to submit form. Please try again.");
+      console.error(error);
+    } finally {
+      setSubmitting(false);
+    }
   };
+
+  const isLoading = submitMutation.isPending;
 
   const inputStyle: React.CSSProperties = {
     backgroundColor: "rgba(255,255,255,0.05)",
