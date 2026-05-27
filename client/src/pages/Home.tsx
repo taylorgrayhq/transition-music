@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import EmailSignup from "@/components/EmailSignup";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-hero-bg-ADc8iwxotSQGwixb4Qbsb8.webp";
 const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-hero-alt1-GpXjogwezerkqhbdgBTStd.webp";
@@ -675,7 +676,7 @@ export default function Home() {
           >
             Subscribe to our newsletter for updates on new placements, artist opportunities, and industry insights.
           </p>
-          <div id="mc_embed_shell" style={{ maxWidth: "500px", margin: "0 auto" }} />
+          <EmailSignup />
         </div>
       </section>
 
