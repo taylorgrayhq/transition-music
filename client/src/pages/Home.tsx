@@ -643,6 +643,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── EMAIL SIGNUP ── */}
+      <section
+        className="py-16"
+        style={{
+          background: "linear-gradient(135deg, rgba(247,148,29,0.08) 0%, rgba(0,0,0,0) 60%)",
+          borderTop: "1px solid rgba(247,148,29,0.1)",
+          borderBottom: "1px solid rgba(247,148,29,0.1)",
+        }}
+      >
+        <div className="container max-w-2xl text-center">
+          <p
+            className="uppercase tracking-widest text-xs mb-3"
+            style={{ fontFamily: "'Barlow', sans-serif", color: "oklch(0.72 0.18 52)" }}
+          >
+            Stay Connected
+          </p>
+          <h2
+            className="text-white font-black leading-none mb-4"
+            style={{
+              fontFamily: "'Barlow Condensed', sans-serif",
+              fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Get Music News & Opportunities
+          </h2>
+          <p
+            className="text-gray-400 mb-8"
+            style={{ fontFamily: "'Barlow', sans-serif" }}
+          >
+            Subscribe to our newsletter for updates on new placements, artist opportunities, and industry insights.
+          </p>
+          <div id="mc_embed_shell" style={{ maxWidth: "500px", margin: "0 auto" }} />
+        </div>
+      </section>
+
       {/* ── CONTACT CTA ── */}
       <section
         className="py-20"
