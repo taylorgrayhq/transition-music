@@ -63,12 +63,14 @@ async function handleSubmission(request: Request, env: Env): Promise<Response> {
   const email = text(data.email);
   const phone = text(data.phone);
   const genre = text(data.genre);
+  const aiUsed = text(data.aiUsed);
   const spotifyUrl = text(data.spotifyUrl);
   const message = text(data.message);
 
   if (!artistName) return json({ success: false, error: "Artist name is required" }, 400);
   if (!isEmail(email)) return json({ success: false, error: "Invalid email" }, 400);
   if (!genre) return json({ success: false, error: "Genre is required" }, 400);
+  if (aiUsed !== "Yes" && aiUsed !== "No") return json({ success: false, error: "AI-use disclosure is required" }, 400);
   if (!isUrl(spotifyUrl)) return json({ success: false, error: "Invalid music URL" }, 400);
 
   const delivered = await sendWithResend(env, {
@@ -81,6 +83,7 @@ async function handleSubmission(request: Request, env: Env): Promise<Response> {
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
       <p><strong>Phone:</strong> ${escapeHtml(phone || "Not provided")}</p>
       <p><strong>Genre:</strong> ${escapeHtml(genre)}</p>
+      <p><strong>AI tools used:</strong> ${escapeHtml(aiUsed)}</p>
       <p><strong>Music Link:</strong> <a href="${escapeHtml(spotifyUrl)}">${escapeHtml(spotifyUrl)}</a></p>
       <p><strong>Additional Notes:</strong></p>
       <p>${escapeHtml(message || "Not provided").replace(/\n/g, "<br />")}</p>`,

@@ -38,6 +38,10 @@ const guidelines = [
     title: "No Unsolicited Physical Media",
     body: "Please do not send CDs, USB drives, or other physical media. Digital submissions only via the form below or by emailing submissions@transitionmusic.com.",
   },
+  {
+    title: "AI-Generated Music Policy",
+    body: "No AI-generated submissions. TMC does not accept purely AI-generated music. All submissions must be 100% original, human-authored work with no uncleared samples. If AI tools were used in any capacity, you must disclose it at the time of submission. AI-assisted work is eligible only with significant human authorship and the required documentation.",
+  },
 ];
 
 export default function SubmitMusic() {
@@ -47,6 +51,7 @@ export default function SubmitMusic() {
     email: "",
     phone: "",
     genre: "",
+    aiUsed: "",
     spotifyUrl: "",
     message: "",
     agree: false,
@@ -74,9 +79,10 @@ export default function SubmitMusic() {
           artistName: formData.artistName,
           contactName: formData.contactName,
         email: formData.email,
-        phone: formData.phone,
-        genre: formData.genre,
-        spotifyUrl: formData.spotifyUrl,
+          phone: formData.phone,
+          genre: formData.genre,
+          aiUsed: formData.aiUsed,
+          spotifyUrl: formData.spotifyUrl,
         message: formData.message,
       };
       // The Cloudflare Worker exposes the existing Netlify-compatible endpoint.
@@ -88,9 +94,10 @@ export default function SubmitMusic() {
         artistName: "",
         contactName: "",
         email: "",
-        phone: "",
-        genre: "",
-        spotifyUrl: "",
+          phone: "",
+          genre: "",
+          aiUsed: "",
+          spotifyUrl: "",
         message: "",
         agree: false,
       });
@@ -362,14 +369,33 @@ export default function SubmitMusic() {
 
                 <div>
                   <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
-                    Additional Notes
+                    Were AI tools used in creating this submission? *
+                  </label>
+                  <select
+                    name="aiUsed"
+                    value={formData.aiUsed}
+                    onChange={handleChange}
+                    required
+                    style={{ ...inputStyle, cursor: "pointer" }}
+                    onFocus={(e) => (e.target.style.borderColor = "oklch(0.72 0.18 52)")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.12)" )}
+                  >
+                    <option value="" style={{ backgroundColor: "#1a1a1a" }}>Select an answer...</option>
+                    <option value="No" style={{ backgroundColor: "#1a1a1a" }}>No — entirely human-authored</option>
+                    <option value="Yes" style={{ backgroundColor: "#1a1a1a" }}>Yes — disclosed in the notes below</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                      Additional Notes / AI-Use Disclosure
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    placeholder="Tell us about your music, rights status, and any relevant credits..."
+                    placeholder="Tell us about your music, rights status, relevant credits, and any AI tools used..."
                     style={{ ...inputStyle, resize: "vertical" }}
                     onFocus={(e) => (e.target.style.borderColor = "oklch(0.72 0.18 52)")}
                     onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.12)")}
@@ -391,7 +417,7 @@ export default function SubmitMusic() {
                     className="text-gray-400 text-sm leading-relaxed cursor-pointer"
                     style={{ fontFamily: "'Barlow', sans-serif" }}
                   >
-                    I confirm that I have read and agree to the submission guidelines, and that I own or control all rights to the submitted material.
+                    I confirm that I have read and agree to the submission guidelines, including the AI-generated music policy, and that I own or control all rights to the submitted material. By submitting, I agree to our Submission Terms.
                   </label>
                 </div>
 
