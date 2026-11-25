@@ -38,7 +38,7 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
   if (!message) return json({ success: false, error: "Message is required" }, 400);
 
   const delivered = await sendWithResend(env, {
-    to: "contact@transitionmusic.com",
+    to: "info@transitionmusic.com",
     replyTo: email,
     subject: `New Contact Form Submission: ${subject}`,
     html: `<h2>New Contact Form Submission</h2>
