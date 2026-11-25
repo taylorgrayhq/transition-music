@@ -15,7 +15,7 @@ const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dE
 
 const guidelines = [
   {
-    title: "AI-Generated Music Policy",
+    title: "AI Submission Policy",
     body: "No AI-generated submissions. TMC does not accept purely AI-generated music. All submissions must be 100% original, human-authored work with no uncleared samples. If AI tools were used in any capacity, you must disclose it at the time of submission. AI-assisted work is eligible only with significant human authorship and the required documentation.",
   },
   {
