@@ -17,13 +17,11 @@ export type MusicSubmissionInput = {
   message?: string;
 };
 
-export const usesNetlifyForms = import.meta.env.VITE_FORM_BACKEND === "netlify";
-
-export async function submitNetlifyForm<T>(
+export async function submitForm<T>(
   functionName: "contact" | "submit-music",
   data: T
 ): Promise<{ success: true }> {
-  const response = await fetch(`/.netlify/functions/${functionName}`, {
+  const response = await fetch(`/api/${functionName}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),

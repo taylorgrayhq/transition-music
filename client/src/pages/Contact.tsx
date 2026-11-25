@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import { useState } from "react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
-import { submitNetlifyForm, usesNetlifyForms } from "@/lib/netlifyForms";
+import { submitForm } from "@/lib/apiForms";
 import siteContent from "@/content/site.json";
 
 const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-services-bg-TUb43GcAyETB2SVCPheXGw.webp";
@@ -66,7 +66,7 @@ export default function Contact() {
       // The Cloudflare Worker exposes the existing Netlify-compatible endpoint.
       // Use it for the static production build; the legacy tRPC path is not
       // available once the site is served outside the Manus application server.
-      await submitNetlifyForm("contact", formData);
+      await submitForm("contact", formData);
       toast.success("Thank you for reaching out! A member of our team will be in touch shortly.");
       setFormData({ name: "", company: "", email: "", phone: "", subject: "", message: "" });
     } catch (error) {
