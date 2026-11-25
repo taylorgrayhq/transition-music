@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import { useState } from "react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
+import { submitNetlifyForm, usesNetlifyForms } from "@/lib/netlifyForms";
 
 const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-services-bg-TUb43GcAyETB2SVCPheXGw.webp";
 
@@ -41,6 +42,7 @@ const guidelines = [
 export default function SubmitMusic() {
   const [formData, setFormData] = useState({
     artistName: "",
+    contactName: "",
     email: "",
     phone: "",
     genre: "",
@@ -67,17 +69,24 @@ export default function SubmitMusic() {
     }
     setSubmitting(true);
     try {
-      await submitMutation.mutateAsync({
-        artistName: formData.artistName,
+      const submission = {
+          artistName: formData.artistName,
+          contactName: formData.contactName,
         email: formData.email,
         phone: formData.phone,
         genre: formData.genre,
         spotifyUrl: formData.spotifyUrl,
         message: formData.message,
-      });
+      };
+      if (usesNetlifyForms) {
+        await submitNetlifyForm("submit-music", submission);
+      } else {
+        await submitMutation.mutateAsync(submission);
+      }
       toast.success("Thank you for your submission! We'll review your music and be in touch if it's a fit for our catalog.");
       setFormData({
         artistName: "",
+        contactName: "",
         email: "",
         phone: "",
         genre: "",
@@ -271,8 +280,8 @@ export default function SubmitMusic() {
                     </label>
                     <input
                       type="text"
-                      name="artistName"
-                      value={formData.artistName}
+                      name="contactName"
+                      value={formData.contactName}
                       onChange={handleChange}
                       required
                       style={inputStyle}
