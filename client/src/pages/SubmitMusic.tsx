@@ -227,12 +227,13 @@ export default function SubmitMusic() {
                       </div>
                       {i === 0 && (
                         <span
-                          className="px-2.5 py-1 text-sm font-black uppercase tracking-widest"
+                          className="text-lg font-black uppercase tracking-widest italic"
                           style={{
-                            backgroundColor: "oklch(0.72 0.18 52)",
-                            color: "#000",
+                            color: "oklch(0.72 0.18 52)",
                             fontFamily: "'Barlow Condensed', sans-serif",
                             lineHeight: 1,
+                            transform: "rotate(-8deg) skewX(-5deg)",
+                            textShadow: "1px 1px 0 rgba(247,148,29,0.35), 2px 2px 0 rgba(0,0,0,0.65)",
                           }}
                         >
                           New
