@@ -236,7 +236,7 @@ export default function SubmitMusic() {
                             textShadow: "1px 1px 0 rgba(247,148,29,0.35), 2px 2px 0 rgba(0,0,0,0.65)",
                           }}
                         >
-                          New AI Policy
+                          New
                         </span>
                       )}
                     </div>
