@@ -73,6 +73,10 @@ export default function SubmitMusic() {
       toast.error("Please confirm that you have read and agree to the submission guidelines.");
       return;
     }
+    if (formData.aiUsed === "Yes" && !formData.message.trim()) {
+      toast.error("Please disclose the AI tools used in the Additional Notes / AI-Use Disclosure field.");
+      return;
+    }
     setSubmitting(true);
     try {
       const submission = {

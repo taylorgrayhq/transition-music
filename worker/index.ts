@@ -71,6 +71,7 @@ async function handleSubmission(request: Request, env: Env): Promise<Response> {
   if (!isEmail(email)) return json({ success: false, error: "Invalid email" }, 400);
   if (!genre) return json({ success: false, error: "Genre is required" }, 400);
   if (aiUsed !== "Yes" && aiUsed !== "No") return json({ success: false, error: "AI-use disclosure is required" }, 400);
+  if (aiUsed === "Yes" && !message) return json({ success: false, error: "Please disclose AI use in the submission notes" }, 400);
   if (!isUrl(spotifyUrl)) return json({ success: false, error: "Invalid music URL" }, 400);
 
   const delivered = await sendWithResend(env, {
