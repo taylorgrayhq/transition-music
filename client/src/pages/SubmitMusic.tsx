@@ -79,11 +79,10 @@ export default function SubmitMusic() {
         spotifyUrl: formData.spotifyUrl,
         message: formData.message,
       };
-      if (usesNetlifyForms) {
-        await submitNetlifyForm("submit-music", submission);
-      } else {
-        await submitMutation.mutateAsync(submission);
-      }
+      // The Cloudflare Worker exposes the existing Netlify-compatible endpoint.
+      // Use it for the static production build; the legacy tRPC path is not
+      // available once the site is served outside the Manus application server.
+      await submitNetlifyForm("submit-music", submission);
       toast.success("Thank you for your submission! We'll review your music and be in touch if it's a fit for our catalog.");
       setFormData({
         artistName: "",

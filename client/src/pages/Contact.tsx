@@ -63,11 +63,10 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      if (usesNetlifyForms) {
-        await submitNetlifyForm("contact", formData);
-      } else {
-        await submitMutation.mutateAsync(formData);
-      }
+      // The Cloudflare Worker exposes the existing Netlify-compatible endpoint.
+      // Use it for the static production build; the legacy tRPC path is not
+      // available once the site is served outside the Manus application server.
+      await submitNetlifyForm("contact", formData);
       toast.success("Thank you for reaching out! A member of our team will be in touch shortly.");
       setFormData({ name: "", company: "", email: "", phone: "", subject: "", message: "" });
     } catch (error) {
