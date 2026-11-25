@@ -1,0 +1,31 @@
+{
+  "home": {
+    "eyebrow": "Full-Service Music Partner",
+    "headlineLineOne": "MUSIC FOR",
+    "headlineLineTwo": "WHAT'S NEXT.",
+    "intro": "For over 25 years, Transition Music has been the trusted music infrastructure behind the world's leading media brands — delivering end-to-end licensing, supervision, publishing, and custom composition at scale.",
+    "primaryCta": "Search Our Library",
+    "secondaryCta": "Our Services"
+  },
+  "about": {
+    "storyHeadingLineOne": "A LEGACY BUILT ON",
+    "storyHeadingLineTwo": "MUSIC THAT MOVES.",
+    "storyParagraphOne": "Transition Music Corporation was founded with a singular mission: to make world-class music accessible, manageable, and profitable for media companies of every size. Over the past 25 years, we have grown from a boutique licensing firm into one of the most respected full-service music companies in the industry.",
+    "storyParagraphTwo": "Our team is led by Donna Ross Jones, a music industry veteran whose career spans Grammy and Emmy award-winning productions. Under her leadership, TMC has been recognized by the National Music Publishers' Association (NMPA) as a Top 100 Music Publisher for ten consecutive years — a distinction that reflects our commitment to both creative excellence and rigorous rights management.",
+    "storyParagraphThree": "Today, we serve as the outsourced music department for over 29 active television series across 8+ networks, managing everything from initial music strategy through final royalty disbursement. Our clients trust us not just as a vendor, but as a true creative and operational partner."
+  },
+  "services": {
+    "introParagraphOne": "Transition Music offers a comprehensive suite of music services designed to meet the needs of today's media landscape. Whether you require a single track cleared or a complete outsourced music infrastructure, we deliver with precision, creativity, and care.",
+    "introParagraphTwo": "Our integrated approach means that every service we offer is connected — licensing informs supervision, supervision informs publishing, and publishing informs royalty collection. The result is a seamless music ecosystem that works harder for your content and your bottom line."
+  },
+  "contact": {
+    "heroLineOne": "LET'S",
+    "heroLineTwo": "CONNECT.",
+    "formHeading": "SEND US A MESSAGE."
+  },
+  "submitMusic": {
+    "heroLineOne": "SHARE YOUR",
+    "heroLineTwo": "SOUND.",
+    "formHeading": "SUBMIT YOUR MUSIC"
+  }
+}

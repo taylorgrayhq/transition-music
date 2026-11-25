@@ -1,0 +1,59 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "client/public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "site"
+        label: "Website Text"
+        file: "client/src/content/site.json"
+        fields:
+          - label: "Homepage"
+            name: "home"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Headline line one", name: "headlineLineOne", widget: "string" }
+              - { label: "Headline line two", name: "headlineLineTwo", widget: "string" }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - { label: "Primary button", name: "primaryCta", widget: "string" }
+              - { label: "Secondary button", name: "secondaryCta", widget: "string" }
+          - label: "About page"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Story heading line one", name: "storyHeadingLineOne", widget: "string" }
+              - { label: "Story heading line two", name: "storyHeadingLineTwo", widget: "string" }
+              - { label: "Story paragraph one", name: "storyParagraphOne", widget: "text" }
+              - { label: "Story paragraph two", name: "storyParagraphTwo", widget: "text" }
+              - { label: "Story paragraph three", name: "storyParagraphThree", widget: "text" }
+          - label: "Services page"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Intro paragraph one", name: "introParagraphOne", widget: "text" }
+              - { label: "Intro paragraph two", name: "introParagraphTwo", widget: "text" }
+          - label: "Contact page"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Hero line one", name: "heroLineOne", widget: "string" }
+              - { label: "Hero line two", name: "heroLineTwo", widget: "string" }
+              - { label: "Form heading", name: "formHeading", widget: "string" }
+          - label: "Submit Music page"
+            name: "submitMusic"
+            widget: "object"
+            fields:
+              - { label: "Hero line one", name: "heroLineOne", widget: "string" }
+              - { label: "Hero line two", name: "heroLineTwo", widget: "string" }
+              - { label: "Form heading", name: "formHeading", widget: "string" }

@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
 import EmailSignup from "@/components/EmailSignup";
+import siteContent from "@/content/site.json";
 
 const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-services-bg-TUb43GcAyETB2SVCPheXGw.webp";
 const HUB_DIAGRAM = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-hub-diagram_6aad3df9.png";
@@ -113,10 +114,10 @@ export default function Services() {
         <div className="container">
           <div className="max-w-3xl">
             <p className="text-gray-300 leading-relaxed text-lg mb-4" style={{ fontFamily: "'Barlow', sans-serif" }}>
-              Transition Music offers a comprehensive suite of music services designed to meet the needs of today's media landscape. Whether you require a single track cleared or a complete outsourced music infrastructure, we deliver with precision, creativity, and care.
+              {siteContent.services.introParagraphOne}
             </p>
             <p className="text-gray-500 leading-relaxed" style={{ fontFamily: "'Barlow', sans-serif" }}>
-              Our integrated approach means that every service we offer is connected — licensing informs supervision, supervision informs publishing, and publishing informs royalty collection. The result is a seamless music ecosystem that works harder for your content and your bottom line.
+              {siteContent.services.introParagraphTwo}
             </p>
           </div>
         </div>

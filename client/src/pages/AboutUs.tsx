@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
 import EmailSignup from "@/components/EmailSignup";
+import siteContent from "@/content/site.json";
 
 const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-about-bg-fscjPNDwFiTHPKpak4QMAT.webp";
 const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-services-bg-TUb43GcAyETB2SVCPheXGw.webp";
@@ -110,16 +111,16 @@ export default function AboutUs() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                A LEGACY BUILT ON<br />MUSIC THAT MOVES.
+                {siteContent.about.storyHeadingLineOne}<br />{siteContent.about.storyHeadingLineTwo}
               </h2>
               <p className="text-gray-300 leading-relaxed mb-5" style={{ fontFamily: "'Barlow', sans-serif" }}>
-                Transition Music Corporation was founded with a singular mission: to make world-class music accessible, manageable, and profitable for media companies of every size. Over the past 25 years, we have grown from a boutique licensing firm into one of the most respected full-service music companies in the industry.
+                {siteContent.about.storyParagraphOne}
               </p>
               <p className="text-gray-400 leading-relaxed mb-5" style={{ fontFamily: "'Barlow', sans-serif" }}>
-                Our team is led by Donna Ross Jones, a music industry veteran whose career spans Grammy and Emmy award-winning productions. Under her leadership, TMC has been recognized by the National Music Publishers' Association (NMPA) as a Top 100 Music Publisher for ten consecutive years — a distinction that reflects our commitment to both creative excellence and rigorous rights management.
+                {siteContent.about.storyParagraphTwo}
               </p>
               <p className="text-gray-400 leading-relaxed" style={{ fontFamily: "'Barlow', sans-serif" }}>
-                Today, we serve as the outsourced music department for over 29 active television series across 8+ networks, managing everything from initial music strategy through final royalty disbursement. Our clients trust us not just as a vendor, but as a true creative and operational partner.
+                {siteContent.about.storyParagraphThree}
               </p>
             </div>
 

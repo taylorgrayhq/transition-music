@@ -10,6 +10,7 @@ import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import EmailSignup from "@/components/EmailSignup";
+import siteContent from "@/content/site.json";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-hero-bg-ADc8iwxotSQGwixb4Qbsb8.webp";
 const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-hero-alt1-GpXjogwezerkqhbdgBTStd.webp";
@@ -184,7 +185,7 @@ export default function Home() {
                 className="text-xs uppercase tracking-widest"
                 style={{ fontFamily: "'Barlow', sans-serif", color: "oklch(0.72 0.18 52)" }}
               >
-                Full-Service Music Partner
+                {siteContent.home.eyebrow}
               </span>
             </div>
 
@@ -198,8 +199,8 @@ export default function Home() {
                 animation: "fadeUp 0.7s 0.1s ease both",
               }}
             >
-              MUSIC FOR<br />
-              <span style={{ color: "oklch(0.72 0.18 52)" }}>WHAT'S NEXT.</span>
+              {siteContent.home.headlineLineOne}<br />
+              <span style={{ color: "oklch(0.72 0.18 52)" }}>{siteContent.home.headlineLineTwo}</span>
             </h1>
 
             {/* Subheadline */}
@@ -211,7 +212,7 @@ export default function Home() {
                 animation: "fadeUp 0.7s 0.2s ease both",
               }}
             >
-              For over 25 years, Transition Music has been the trusted music infrastructure behind the world's leading media brands — delivering end-to-end licensing, supervision, publishing, and custom composition at scale.
+              {siteContent.home.intro}
             </p>
 
             {/* CTAs */}
@@ -229,7 +230,7 @@ export default function Home() {
                     letterSpacing: "0.1em",
                   }}
                 >
-                  Search Our Library
+                  {siteContent.home.primaryCta}
                 </button>
               </a>
               <Link href="/services">
@@ -243,7 +244,7 @@ export default function Home() {
                     backgroundColor: "transparent",
                   }}
                 >
-                  Our Services
+                  {siteContent.home.secondaryCta}
                 </button>
               </Link>
             </div>

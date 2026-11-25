@@ -9,6 +9,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import { submitNetlifyForm, usesNetlifyForms } from "@/lib/netlifyForms";
+import siteContent from "@/content/site.json";
 
 const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dEY7EBsjzfkvLeHY8foBJU/tmc-services-bg-TUb43GcAyETB2SVCPheXGw.webp";
 
@@ -130,8 +131,8 @@ export default function Contact() {
               letterSpacing: "-0.02em",
             }}
           >
-            LET'S<br />
-            <span style={{ color: "oklch(0.72 0.18 52)" }}>CONNECT.</span>
+            {siteContent.contact.heroLineOne}<br />
+            <span style={{ color: "oklch(0.72 0.18 52)" }}>{siteContent.contact.heroLineTwo}</span>
           </h1>
         </div>
       </section>
@@ -231,7 +232,7 @@ export default function Contact() {
                   letterSpacing: "-0.01em",
                 }}
               >
-                SEND US A MESSAGE.
+                {siteContent.contact.formHeading}
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
