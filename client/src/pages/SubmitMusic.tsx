@@ -214,15 +214,29 @@ export default function SubmitMusic() {
                       boxShadow: "0 0 30px rgba(247,148,29,0.08)",
                     } : undefined}
                   >
-                    <div
-                      className={`${i === 0 ? "w-9 h-9 text-base" : "w-7 h-7 text-sm"} rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 font-black`}
-                      style={{
-                        backgroundColor: "oklch(0.72 0.18 52)",
-                        color: "#000",
-                        fontFamily: "'Barlow Condensed', sans-serif",
-                      }}
-                    >
-                      {i + 1}
+                    <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                      <div
+                        className={`${i === 0 ? "w-9 h-9 text-base" : "w-7 h-7 text-sm"} rounded-full flex items-center justify-center mt-0.5 font-black`}
+                        style={{
+                          backgroundColor: "oklch(0.72 0.18 52)",
+                          color: "#000",
+                          fontFamily: "'Barlow Condensed', sans-serif",
+                        }}
+                      >
+                        {i + 1}
+                      </div>
+                      {i === 0 && (
+                        <span
+                          className="px-1.5 py-0.5 text-[0.6rem] font-black uppercase tracking-wider"
+                          style={{
+                            backgroundColor: "#fff",
+                            color: "#000",
+                            fontFamily: "'Barlow Condensed', sans-serif",
+                          }}
+                        >
+                          New
+                        </span>
+                      )}
                     </div>
                     <div>
                       <h4
