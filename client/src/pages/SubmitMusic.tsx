@@ -15,6 +15,10 @@ const WAVEFORM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378282072/dE
 
 const guidelines = [
   {
+    title: "AI-Generated Music Policy",
+    body: "No AI-generated submissions. TMC does not accept purely AI-generated music. All submissions must be 100% original, human-authored work with no uncleared samples. If AI tools were used in any capacity, you must disclose it at the time of submission. AI-assisted work is eligible only with significant human authorship and the required documentation.",
+  },
+  {
     title: "Original Recordings Only",
     body: "We accept original compositions and recordings only. Covers, remixes, or interpolations of existing copyrighted works will not be considered.",
   },
@@ -37,10 +41,6 @@ const guidelines = [
   {
     title: "No Unsolicited Physical Media",
     body: "Please do not send CDs, USB drives, or other physical media. Digital submissions only via the form below or by emailing submissions@transitionmusic.com.",
-  },
-  {
-    title: "AI-Generated Music Policy",
-    body: "No AI-generated submissions. TMC does not accept purely AI-generated music. All submissions must be 100% original, human-authored work with no uncleared samples. If AI tools were used in any capacity, you must disclose it at the time of submission. AI-assisted work is eligible only with significant human authorship and the required documentation.",
   },
 ];
 
@@ -120,7 +120,7 @@ export default function SubmitMusic() {
     border: "1px solid rgba(255,255,255,0.12)",
     color: "#fff",
     fontFamily: "'Barlow', sans-serif",
-    fontSize: "0.9rem",
+    fontSize: "1rem",
     padding: "0.75rem 1rem",
     width: "100%",
     outline: "none",
@@ -205,9 +205,17 @@ export default function SubmitMusic() {
               </h2>
               <div className="space-y-5">
                 {guidelines.map((g, i) => (
-                  <div key={g.title} className="flex gap-4">
+                  <div
+                    key={g.title}
+                    className={`flex gap-4 ${i === 0 ? "p-5 sm:p-6" : ""}`}
+                    style={i === 0 ? {
+                      backgroundColor: "rgba(247,148,29,0.1)",
+                      border: "1px solid rgba(247,148,29,0.55)",
+                      boxShadow: "0 0 30px rgba(247,148,29,0.08)",
+                    } : undefined}
+                  >
                     <div
-                      className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black"
+                      className={`${i === 0 ? "w-9 h-9 text-base" : "w-7 h-7 text-sm"} rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 font-black`}
                       style={{
                         backgroundColor: "oklch(0.72 0.18 52)",
                         color: "#000",
@@ -218,13 +226,13 @@ export default function SubmitMusic() {
                     </div>
                     <div>
                       <h4
-                        className="text-white font-semibold mb-1"
-                        style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}
+                        className="text-white font-semibold mb-2"
+                        style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: i === 0 ? "1.45rem" : "1.2rem" }}
                       >
                         {g.title}
                       </h4>
                       <p
-                        className="text-gray-400 text-sm leading-relaxed"
+                        className={`${i === 0 ? "text-gray-200" : "text-gray-300"} text-base leading-relaxed`}
                         style={{ fontFamily: "'Barlow', sans-serif" }}
                       >
                         {g.body}
@@ -239,7 +247,7 @@ export default function SubmitMusic() {
                 style={{ backgroundColor: "rgba(247,148,29,0.08)", border: "1px solid rgba(247,148,29,0.2)" }}
               >
                 <p
-                  className="text-sm leading-relaxed"
+                  className="text-base leading-relaxed"
                   style={{ fontFamily: "'Barlow', sans-serif", color: "oklch(0.72 0.18 52)" }}
                 >
                   You may also submit directly via email to{" "}
@@ -271,7 +279,7 @@ export default function SubmitMusic() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                    <label className="block text-gray-300 text-sm uppercase tracking-wide mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
                       Artist / Band Name *
                     </label>
                     <input
@@ -286,7 +294,7 @@ export default function SubmitMusic() {
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                    <label className="block text-gray-300 text-sm uppercase tracking-wide mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
                       Contact Name *
                     </label>
                     <input
@@ -304,7 +312,7 @@ export default function SubmitMusic() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                    <label className="block text-gray-300 text-sm uppercase tracking-wide mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
                       Email Address *
                     </label>
                     <input
@@ -319,7 +327,7 @@ export default function SubmitMusic() {
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                    <label className="block text-gray-300 text-sm uppercase tracking-wide mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
                       Phone Number
                     </label>
                     <input
@@ -335,7 +343,7 @@ export default function SubmitMusic() {
                 </div>
 
                 <div>
-                  <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                  <label className="block text-gray-300 text-sm uppercase tracking-wide mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
                     Primary Genre *
                   </label>
                   <select
@@ -355,7 +363,7 @@ export default function SubmitMusic() {
                 </div>
 
                 <div>
-                  <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                  <label className="block text-gray-300 text-sm uppercase tracking-wide mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
                     Link to Music (Spotify, SoundCloud, Dropbox, Google Drive, etc.) *
                   </label>
                   <input
@@ -372,7 +380,7 @@ export default function SubmitMusic() {
                 </div>
 
                 <div>
-                  <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                  <label className="block text-gray-300 text-sm uppercase tracking-wide mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
                     Were AI tools used in creating this submission? *
                   </label>
                   <select
@@ -391,7 +399,7 @@ export default function SubmitMusic() {
                 </div>
 
                 <div>
-                  <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                  <label className="block text-gray-300 text-sm uppercase tracking-wide mb-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
                       Additional Notes / AI-Use Disclosure
                   </label>
                   <textarea
